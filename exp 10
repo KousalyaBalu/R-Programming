@@ -1,0 +1,6 @@
+v <- c(1,2,3,4,5,6)
+max_v <-max(v)
+min_v <-min(v)
+print(v)
+cat("the maximum value: ",max_v,"\n")
+cat("the minimum value: ",min_v,"\n")
