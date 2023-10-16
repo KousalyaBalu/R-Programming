@@ -1,0 +1,20 @@
+find_factors <- function(number) {
+  factors <- numeric()
+  
+  for (i in 1:number) {
+    if (number %% i == 0) {
+      factors <- c(factors, i)
+    }
+  }
+  
+  return(factors)
+}
+user_number <- as.numeric(readline(prompt = "Enter a number: "))
+
+if (!is.na(user_number)) {
+  result_factors <- find_factors(user_number)
+  cat("Factors of", user_number, "are:", result_factors, "\n")
+} else {
+  cat("Invalid input. Please enter a valid number.\n")
+}
+
