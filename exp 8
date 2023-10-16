@@ -1,0 +1,7 @@
+english_letters <- letters
+first_10_lowercase <- english_letters[1:10]
+last_10_uppercase <- toupper(tail(english_letters, 10))
+letters_between_22_to_24_uppercase <- toupper(english_letters[22:24])
+cat("First 10 English letters in lowercase:", first_10_lowercase, "\n")
+cat("Last 10 English letters in uppercase:", last_10_uppercase, "\n")
+cat("Letters between 22nd to 24th positions in uppercase:", letters_between_22_to_24_uppercase, "\n")
