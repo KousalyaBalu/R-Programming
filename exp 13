@@ -1,0 +1,12 @@
+# Set seed for reproducibility (optional)
+set.seed(42)
+
+# Create a list of random numbers in normal distribution
+random_numbers <- rnorm(100, mean = 0, sd = 1)
+
+# Count occurrences of each value
+occurrences <- table(random_numbers)
+
+# Print the results
+cat("Random Numbers:", random_numbers, "\n\n")
+cat("Occurrences:\n", occurrences, "\n")
