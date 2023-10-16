@@ -1,0 +1,11 @@
+#create a csv file in notepad and save as "all.files" and copy its path and paste here
+data <- read.csv("C:/Users/KOWSALYA/Desktop/14input.csv")
+print(data)
+
+input:
+     file name=14input.csv
+name,age,dept
+kousi,19,IT
+sruthi,19,IT
+jeff,19,CSE
+ash,19,CSE
