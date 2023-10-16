@@ -1,0 +1,6 @@
+numbers<- seq(20, 50, by = 1)
+mean <- mean(seq(20, 60, by = 1))
+sum <- sum(seq(51, 91, by = 1))
+cat("Sequence of numbers from 20 to 50:", numbers, "\n")
+cat("Mean of numbers from 20 to 60:", mean, "\n")
+cat("Sum of numbers from 51 to 91:", sum, "\n")
