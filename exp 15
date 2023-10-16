@@ -1,0 +1,15 @@
+# Create three vectors with numeric, character, and logical data
+numeric_vector <- c(1, 2, 3, 4, 5)
+character_vector <- c("apple", "banana", "orange")
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+
+# Display the content of the vectors
+cat("Numeric Vector:", numeric_vector, "\n")
+cat("Character Vector:", character_vector, "\n")
+cat("Logical Vector:", logical_vector, "\n")
+
+# Print the types of the vectors
+cat("\nTypes of Vectors:\n")
+cat("Numeric Vector Type:", typeof(numeric_vector), "\n")
+cat("Character Vector Type:", typeof(character_vector), "\n")
+cat("Logical Vector Type:", typeof(logical_vector), "\n")
