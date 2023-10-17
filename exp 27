@@ -1,0 +1,11 @@
+# Access the 'women' dataset
+data(women)
+
+# Display the first few rows of the 'women' dataset
+print(head(women))
+
+# Create a factor corresponding to the 'height' variable
+height_factor <- cut(women$height, breaks = c(50, 60, 70, 80), labels = c("Short", "Medium", "Tall"))
+
+# Display the created factor
+print(height_factor)
