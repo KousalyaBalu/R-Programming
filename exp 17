@@ -1,0 +1,18 @@
+# Sample vector of values
+values <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+
+# Sample vector of dimensions
+dims <- c(2, 3, 2)  # This will create a 3-dimensional array with dimensions 2x3x2
+
+# Naming each dimension
+dimnames_list <- list(
+  c("Row1", "Row2"),   # Naming for the first dimension
+  c("Col1", "Col2", "Col3"),   # Naming for the second dimension
+  c("Depth1", "Depth2")   # Naming for the third dimension
+)
+
+# Creating the array
+my_array <- array(data = values, dim = dims, dimnames = dimnames_list)
+
+# Print the array
+print(my_array)
