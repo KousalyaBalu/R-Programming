@@ -1,0 +1,22 @@
+# Load required libraries
+library(ggplot2)
+# (i) Find and handle missing values
+missing_values <- sapply(airquality, function(x) sum(is.na(x)))
+missing_threshold <- 0.1 * nrow(airquality)
+
+for (col in names(airquality)) {
+  if (missing_values[col] > 0) {
+    if (missing_values[col] < missing_threshold) {
+      airquality <- airquality[complete.cases(airquality[, col]), ]
+    } else {
+      airquality[is.na(airquality[, col]), col] <- mean(airquality[, col], na.rm = TRUE)
+    }
+  }
+}
+# (ii) Apply linear regression on "Ozone" and "Solar.R"
+linear_model <- lm(Ozone ~ Solar.R, data = airquality)
+# (iii) Plot Scatter plot between Ozone and Solar and add regression line
+ggplot(airquality, aes(x = Solar.R, y = Ozone)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, col = "blue") +
+  labs(title = "Scatter Plot between Ozone and Solar.R with Regression Line")
