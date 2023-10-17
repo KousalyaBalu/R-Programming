@@ -1,0 +1,21 @@
+# Install and load the glmnet package
+install.packages("glmnet")
+library(glmnet)
+# Convert species to a binary factor for binary classification
+train_data$Species <- ifelse(train_data$Species == "versicolor", 1, 0)
+
+# Fit logistic regression with L1 regularization
+logistic_model <- cv.glmnet(as.matrix(train_data[, c("Petal.Length", "Petal.Width")]), train_data$Species, family = "binomial")
+
+# (iii) Predict the probability of the model using test data
+predicted_probabilities <- predict(logistic_model, newx = as.matrix(test_data[, c("Petal.Length", "Petal.Width")]), s = "lambda.min", type = "response")
+
+# Convert probabilities to predicted classes
+predicted_classes <- ifelse(predicted_probabilities > 0.5, 1, 0)
+
+# Convert back to species levels
+predicted_classes <- ifelse(predicted_classes == 1, "versicolor", "not versicolor")
+
+# (iv) Create a confusion matrix for the test model
+conf_matrix <- table(predicted_classes, test_data$Species)
+print(conf_matrix)
